@@ -4,11 +4,11 @@
 
 Lo primero que haremos es preparar nuestro entorno, tanto de desarrollo como de producción y agregar reglas de linter para tener buenas prácticas de desarrollo.
 
-Es necesario tener instalado previamente Nodejs, lo puedes hacer a la fecha de creación de este tutoríal en el siguiente [link](https://nodejs.org/en)
+Es necesario tener instalado previamente Nodejs, lo puedes hacer a la fecha de creación de este tutorial en el siguiente [link](https://nodejs.org/en)
 
 ![](img\image.png "Website de Nodejs")
 
-Se sugiere instalar la versión LTS disponible al momento de desacargar, en este caso está disponible la versión **18.16.1 LTS**
+Se sugiere instalar la versión LTS disponible al momento de descargar, en este caso está disponible la versión **18.16.1 LTS**
 
 ![](img\image-1.png "Descarga del Instalador de Node")
 
@@ -46,11 +46,11 @@ git init
 
 Si todo ha salido bien hasta este punto, es necesario empezar a crear los distintos archivos que formaran parte de las configuraciones.
 
-Agregamos el archivo .gitignore, .editorconfig, .eslinrc.json
+Agregamos el archivo .gitignore, .editorconfig, .eslintrc.json
 
-![](img\image-7.png "Agregamos los archivos .gitignore. editorconfig y .eslinrc.json")
+![](img\image-7.png "Agregamos los archivos .gitignore. editorconfig y .eslintrc.json")
 
-Tambien es importante en este punto crear el archivo inicial **index.js**
+También es importante en este punto crear el archivo inicial **index.js**
 
 ![](img\image-8.png "Creando el archivo index.js")
 
@@ -110,7 +110,7 @@ De la misma forma hacemos con el archivo .eslintrc.json
   }
 }
 ```
-![](img\image-13.png "Confiuraci'on del archivo eselintrc.json")
+![](img\image-13.png "Configuración del archivo eslintrc.json")
 
 Ahora nos concentramos en el archivo **package.json** para ello agregamos la siguiente configuración.
 
@@ -162,7 +162,7 @@ npm run start
 ![](img\image-16.png "npm run start")
 
 En la siguiente sección crearemos nuestro primer servidor de Node con Express.
-
+---
 ## Instalación de Express.
 
 Para poder utilizar este micro framework es necesario instalarlo, así que vamos a ello.
@@ -172,11 +172,11 @@ En este caso es necesario instalarlo como una dependencia de producción que es 
 ```bash
 npm i express
 ```
-![](image-17.png "npm i express")
+![](img\image-17.png "npm i express")
 
 Ahora es momento de probar si tenemos express instalado, por ello es necesario que utilicemos la dependencia en los archivos de configuración. En el archivo package.json ahora ya tenemos el a Express como dependencia.
 
-![](image-18.png "Express como dependencia")
+![](img\image-18.png "Express como dependencia")
 
 Es necesario recalcar que las dependencias de desarrollo están dentro de devDependencies y en este caso Express solo está en dependecies, es decir ahí la diferencia que es una dependencia de producción.
 
@@ -202,10 +202,55 @@ Para poder probar express vamos a utilizar nodemon, es un paquete muy útil en d
 ```bash
 npm run dev
 ```
-![](image-19.png "El comando npm run dev")
+![](img\image-19.png "El comando npm run dev")
 
 Podemos ver que está corriendo nuestro modo de desarrollo con nodemon, pero falta probarlo en el navegador.
 
-![](image-20.png "Verificando la salida del puerto 3000")
+![](img\image-20.png "Verificando la salida del puerto 3000")
 
 Es recomendable consultar la documentación oficial para cualquier duda que podamos tener
+
+### Práctica: 
+
+Puedes probar cambiando el puerto y verificando la salida por consola o por el navegador.
+---
+## Rutas
+
+Hasta ahora hemos visto una ruta que nos mostraba el texto **Este es mi primer server en express**, pero en express es posible configurar más rutas, así que vamos a ello.
+
+```js
+app.get('/new', (req, res) =>{
+  res.send('Esta es una nueva ruta')
+});
+```
+Si no detenemos el servidor vamos a poder ver que se reinicia automáticamente y ahora en el navegador nos muestra el siguiente mensaje con la nueva ruta.
+
+![](img\image-21.png "Probando una nueva ruta")
+
+### Práctica
+
+¿Pensemos en cual sería la ruta más adecuada para productos o servicios?
+
+Sin embargo recordemos que express se caracteriza por brindar información y por lo general lo hace con formato **json**, así que vamos a intentarlo de esta forma.
+
+```js
+app.get('/productos', (req, res) =>{
+  res.json({
+    name: 'Product 001',
+    price: 20.00,
+  })
+});
+```
+Si todo salio bien, en la ruta que podemos utilizar para nuestros productos veremos algo asi.
+
+![](img\image-22.png "Probando la ruta productos")
+
+Sin probamos con Thunder Client o Postman, obtendremos las mismas respuestas que desde el navegador.
+
+![](img\image-23.png "Consulta local desde thunder client")
+
+Recordemos que la ruta o también conocida como **End Point** atiende la solicitud de un cliente y brinda una respuesta.
+
+### Práctica
+
+Prueba crear nuevas rutas por ejemplo Categorías y prueba con la respuesta de Json o la respuesta normal de texto.
