@@ -6,15 +6,15 @@ Lo primero que haremos es preparar nuestro entorno, tanto de desarrollo como de 
 
 Es necesario tener instalado previamente Nodejs, lo puedes hacer a la fecha de creación de este tutorial en el siguiente [link](https://nodejs.org/en)
 
-![](img\image.png "Website de Nodejs")
+![](image.png "Website de Nodejs")
 
 Se sugiere instalar la versión LTS disponible al momento de descargar, en este caso está disponible la versión **18.16.1 LTS**
 
-![](img\image-1.png "Descarga del Instalador de Node")
+![](image-1.png "Descarga del Instalador de Node")
 
 La instalación es bastante sencilla en Windows, basta con leer las indicaciones y dar clic según corresponda en Next
 
-![](img\image-2.png "Instalación de Node")
+![](image-2.png "Instalación de Node")
 
 Una vez instalado Nodejs en nuestro ordenador, procedemos a verificar que el mismo se encuentra instalado, lo pueden hacer con el código
 
@@ -22,7 +22,7 @@ Una vez instalado Nodejs en nuestro ordenador, procedemos a verificar que el mis
 node --version
 ```
 
-![](img\image-4.png "Node --version")
+![](image-4.png "Node --version")
 
 Nos ubicamos en el directorio donde vamos a crear nuestro proyecto nos ubicamos a traves del editor de código, se sugiere VSCode, pero puedes utilizar el que desees.
 
@@ -33,7 +33,7 @@ npm init -y
 ```
 Esto permitirá tener una configuración por defecto en un proyecto creando el archivo package.json
 
-![](img\image-5.png "Creando el Proyecto Inicial")
+![](image-5.png "Creando el Proyecto Inicial")
 
 En el mismo se destaca una versión, una licencia y el formato que debe tener nuestro archivo de configuración inicial.
 
@@ -42,29 +42,29 @@ Como buena práctica de uso de código en un proyecto nuevo, se sugiere iniciali
 ```bash
 git init
 ```
-![](img\image-6.png "git init")
+![](image-6.png "git init")
 
 Si todo ha salido bien hasta este punto, es necesario empezar a crear los distintos archivos que formaran parte de las configuraciones.
 
 Agregamos el archivo .gitignore, .editorconfig, .eslintrc.json
 
-![](img\image-7.png "Agregamos los archivos .gitignore. editorconfig y .eslintrc.json")
+![](image-7.png "Agregamos los archivos .gitignore. editorconfig y .eslintrc.json")
 
 También es importante en este punto crear el archivo inicial **index.js**
 
-![](img\image-8.png "Creando el archivo index.js")
+![](image-8.png "Creando el archivo index.js")
 
 Se recomienda utilizar el sitio [gitignore.io](https://www.toptal.com/developers/gitignore/) para generar automáticamente el archivo .gitignore, tomando en cuenta la tecnología base como node y los sistemas operativos habituales (Mac OS, Linux, Windows)
 
-![](img\image-9.png "Creando el archivo .gitignore")
+![](image-9.png "Creando el archivo .gitignore")
 
 Finalmente podemos copiarlo o descargarlo y remplazar el archivo vació de nuestro proyecto.
 
-![](img\image-10.png "Archivo .gitignore de gitignore.io")
+![](image-10.png "Archivo .gitignore de gitignore.io")
 
 Para poder trabajar con el archivo **.editorconfig** se sugiere instalar el siguiente plugin en VSCode.
 
-![](img\image-11.png "Plugin Editor Config en VsCode")
+![](image-11.png "Plugin Editor Config en VsCode")
 
 Para facilitarnos las cosas por favor agregar esta configuración en el archivo antes mencionado.
 
@@ -87,7 +87,7 @@ max_line_length = off
 trim_trailing_whitespace = false
 
 ```
-![](img\image-12.png "Contenido del archivo .editorconfig")
+![](image-12.png "Contenido del archivo .editorconfig")
 
 De la misma forma hacemos con el archivo .eslintrc.json
 
@@ -110,7 +110,7 @@ De la misma forma hacemos con el archivo .eslintrc.json
   }
 }
 ```
-![](img\image-13.png "Configuración del archivo eslintrc.json")
+![](image-13.png "Configuración del archivo eslintrc.json")
 
 Ahora nos concentramos en el archivo **package.json** para ello agregamos la siguiente configuración.
 
@@ -143,7 +143,7 @@ En este punto es necesario instalar algunas dependencias necesarias.
 npm i nodemon eslint eslint-config-prettier eslint-plugin-prettier prettier -D
 ```
 
-![](img\image-14.png "Instalación de dependencias")
+![](image-14.png "Instalación de dependencias")
 
 En este punto es necesario probar los entornos de desarrollo y producción
 
@@ -151,7 +151,7 @@ En este punto es necesario probar los entornos de desarrollo y producción
 npm run dev
 ```
 
-![](img\image-15.png "npm run dev")
+![](image-15.png "npm run dev")
 
 Ahora para correr en modo producción es necesario que corramos el siguiente comando.
 
@@ -159,7 +159,7 @@ Ahora para correr en modo producción es necesario que corramos el siguiente com
 npm run start
 ```
 
-![](img\image-16.png "npm run start")
+![](image-16.png "npm run start")
 
 En la siguiente sección crearemos nuestro primer servidor de Node con Express.
 ---
@@ -172,11 +172,11 @@ En este caso es necesario instalarlo como una dependencia de producción que es 
 ```bash
 npm i express
 ```
-![](img\image-17.png "npm i express")
+![](image-17.png "npm i express")
 
 Ahora es momento de probar si tenemos express instalado, por ello es necesario que utilicemos la dependencia en los archivos de configuración. En el archivo package.json ahora ya tenemos el a Express como dependencia.
 
-![](img\image-18.png "Express como dependencia")
+![](image-18.png "Express como dependencia")
 
 Es necesario recalcar que las dependencias de desarrollo están dentro de devDependencies y en este caso Express solo está en dependecies, es decir ahí la diferencia que es una dependencia de producción.
 
@@ -202,11 +202,11 @@ Para poder probar express vamos a utilizar nodemon, es un paquete muy útil en d
 ```bash
 npm run dev
 ```
-![](img\image-19.png "El comando npm run dev")
+![](image-19.png "El comando npm run dev")
 
 Podemos ver que está corriendo nuestro modo de desarrollo con nodemon, pero falta probarlo en el navegador.
 
-![](img\image-20.png "Verificando la salida del puerto 3000")
+![](image-20.png "Verificando la salida del puerto 3000")
 
 Es recomendable consultar la documentación oficial para cualquier duda que podamos tener
 
@@ -225,7 +225,7 @@ app.get('/new', (req, res) =>{
 ```
 Si no detenemos el servidor vamos a poder ver que se reinicia automáticamente y ahora en el navegador nos muestra el siguiente mensaje con la nueva ruta.
 
-![](img\image-21.png "Probando una nueva ruta")
+![](image-21.png "Probando una nueva ruta")
 
 ### Práctica
 
@@ -243,11 +243,11 @@ app.get('/productos', (req, res) =>{
 ```
 Si todo salio bien, en la ruta que podemos utilizar para nuestros productos veremos algo asi.
 
-![](img\image-22.png "Probando la ruta productos")
+![](image-22.png "Probando la ruta productos")
 
 Sin probamos con Thunder Client o Postman, obtendremos las mismas respuestas que desde el navegador.
 
-![](img\image-23.png "Consulta local desde thunder client")
+![](image-23.png "Consulta local desde thunder client")
 
 Recordemos que la ruta o también conocida como **End Point** atiende la solicitud de un cliente y brinda una respuesta.
 
