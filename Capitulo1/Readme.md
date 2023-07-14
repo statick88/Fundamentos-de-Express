@@ -161,4 +161,51 @@ npm run start
 
 ![](img\image-16.png "npm run start")
 
-En el siguiente capítulo crearemos nuestro primer servidor de Node con Express.
+En la siguiente sección crearemos nuestro primer servidor de Node con Express.
+
+## Instalación de Express.
+
+Para poder utilizar este micro framework es necesario instalarlo, así que vamos a ello.
+
+En este caso es necesario instalarlo como una dependencia de producción que es diferente a la de desarrollo.
+
+```bash
+npm i express
+```
+![](image-17.png "npm i express")
+
+Ahora es momento de probar si tenemos express instalado, por ello es necesario que utilicemos la dependencia en los archivos de configuración. En el archivo package.json ahora ya tenemos el a Express como dependencia.
+
+![](image-18.png "Express como dependencia")
+
+Es necesario recalcar que las dependencias de desarrollo están dentro de devDependencies y en este caso Express solo está en dependecies, es decir ahí la diferencia que es una dependencia de producción.
+
+# Express como Servidor.
+
+Para utilizar a express como servidor vamos al archivo **index.js** y agregamos el siguiente código
+
+```js
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) =>{
+    res.send('Este es mi primer server en express')
+});
+
+app.listen(port, () => {
+    console.log('Mi port' + port);
+});
+```
+Para poder probar express vamos a utilizar nodemon, es un paquete muy útil en desarrollo
+
+```bash
+npm run dev
+```
+![](image-19.png "El comando npm run dev")
+
+Podemos ver que está corriendo nuestro modo de desarrollo con nodemon, pero falta probarlo en el navegador.
+
+![](image-20.png "Verificando la salida del puerto 3000")
+
+Es recomendable consultar la documentación oficial para cualquier duda que podamos tener
